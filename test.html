@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<title>WebRTC Test Page - dhshin(M2soft)</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0">
+		<script src="adapter.js"></script>
+		<script src="webrtc.js"></script>
+		<style>
+			body {
+				text-align : center;
+				background-color : rgba(220, 220, 245, .5);
+			}
+			button {
+				width : auto;
+				height : 40px;
+				border-radius : 5px;
+				border-color  : gray;
+				background-color : rgba(230, 250, 250, 1);
+				margin : 10px;
+			}
+			button.stop {
+				background-color : rgba(255, 200, 200, 1);
+			}
+			video {
+				width  : 300px;
+				height : 200px;
+				border-radius : 1px;
+				margin-right : 10px;
+				background-color : black;
+			}
+			.horizontal {
+				display : inline-block;
+				margin-top : 10px;
+			}
+			.horizontal span {
+				font-weight : bold;
+			}
+			#content {
+				width : 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<h1>WebRTC Test Page</h1>
+			<div class="horizontal">
+				<div class="horizontal">
+					<span> Bob(Caller) </span><br>
+					<video id="video_caller" muted autoplay></video><br>
+				</div>
+				<div class="horizontal">
+					<span> Alice(Callee) </span><br>
+					<video id="video_callee" autoplay></video>
+				</div>
+			</div><br><br>
+
+			<h3>State : <span id="state">None</span></h3>
+			<button onclick="stopMedia()" class="stop">stopMedia</button>
+			<button onclick="getMedia()">getUserMedia</button>
+			<button onclick="createPeerConnection()">Create RTCPeerConnection</button>
+			<button onclick="offer()">CreateOffer</button>
+			<button onclick="answer()">CreateAnswer</button>
+		<div>
+	</body>
+</html>
